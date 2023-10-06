@@ -1,0 +1,14 @@
+{
+    "listings.csv.gz": [
+      "http://data.insideairbnb.com/united-states/nc/asheville/2023-09-13/data/listings.csv.gz",
+      "http://data.insideairbnb.com/united-states/nc/asheville/2023-06-18/data/listings.csv.gz"
+    ],
+    "calendar.csv.gz": [
+      "http://data.insideairbnb.com/united-states/nc/asheville/2023-09-13/data/calendar.csv.gz",
+      "http://data.insideairbnb.com/united-states/nc/asheville/2023-06-18/data/calendar.csv.gz"
+    ],
+    "reviews.csv.gz": [
+      "http://data.insideairbnb.com/united-states/nc/asheville/2023-09-13/data/reviews.csv.gz",
+      "http://data.insideairbnb.com/united-states/nc/asheville/2023-06-18/data/reviews.csv.gz"
+    ]
+  }
