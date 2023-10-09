@@ -58,14 +58,5 @@ Interested in making this tool even better? We welcome contributions!
 
 ### License
 
-(You can specify the license details here.)
-
----
-
-This README offers a more detailed breakdown of each component and its usage. Adjustments can be made as needed, especially if you have specific paths or additional steps to mention.
-
-
-## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
