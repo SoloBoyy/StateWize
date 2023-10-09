@@ -1,55 +1,69 @@
 # StateWize
 
-```markdown
-# Airbnb Web Scraper
+## Airbnb Data Processor
 
-This Python script allows you to scrape Airbnb listings for a specific city, state, and country using Selenium and BeautifulSoup. The scraped data includes information about each Airbnb listing, such as title, rating, superhost status, location, response rate, response time, cancellation policy, check-in/out times, and more.
+### Overview
 
-## Getting Started
+This repository offers a suite of tools for web scraping, processing, and analyzing Airbnb datasets. Leveraging Python scripts, it aids in efficiently downloading data, restructuring it, and deriving insights through sentiment analysis.
 
-These instructions will help you set up and run the Airbnb web scraper on your local machine.
+### Contents
 
-### Prerequisites
+1. **insideairbnb.html**:
+   - An HTML document containing links to Airbnb datasets. This includes listings, reviews, and calendar data spanning various cities and dates.
+   
+2. **InsideAirbnbHtmlScrapper.py**:
+   - **Purpose**: This script is designed to scrape data from the `insideairbnb.html` page.
+   - **Features**:
+     - Uses `BeautifulSoup` to parse HTML.
+     - Efficiently extracts links related to different Airbnb datasets.
+   - **Usage**: Modify the `html_file_path` variable to point to your local copy of the `insideairbnb.html` file and then run the script.
 
-- Python 3.x
-- Selenium (`pip install selenium`)
-- BeautifulSoup (`pip install beautifulsoup4`)
-- Chrome WebDriver (compatible with your Chrome browser version)
+3. **batch_csv_processor.py**:
+   - **Purpose**: Automate the process of downloading and handling CSV files from the Airbnb dataset.
+   - **Features**:
+     - Can download and extract compressed `.gz` files.
+     - Utilizes `pandas` for data manipulations.
+   - **Usage**: Call the `download_and_extract` function with appropriate parameters (URL and save folder).
 
-### Installation
+4. **reviews_sa.py**:
+   - **Purpose**: Conduct sentiment analysis on Airbnb reviews.
+   - **Features**:
+     - Computes sentiment scores using `TextBlob`.
+     - Aggregates sentiment scores by 'listing_id'.
+     - Merges sentiment scores with original listings.
+   - **Usage**: Ensure you have the `reviews_test.csv` and `listings_test.csv` files in the appropriate directory. Run the script to get a merged dataframe with sentiment scores.
 
-1. Clone the repository to your local machine:
+5. **JSON Files**: `restructured_data.json`, `test.json`, `city_data.json`:
+   - These files contain structured links to Airbnb datasets.
+   - Organized either by data type (e.g., listings, reviews) or by city for easy referencing.
 
-   ```bash
-   git clone https://github.com/yourusername/airbnb-web-scraper.git
-   cd airbnb-web-scraper
-   ```
+### Installation and Setup
 
-2. Install the required Python packages:
+1. **Dependencies**:
+   - Install the necessary Python libraries using pip:
+     ```bash
+     pip install beautifulsoup4 pandas textblob
+     ```
+2. **Setup**:
+   - Clone this repository to your local machine.
+   - Ensure you have the required data files in the appropriate directories.
+   - Modify file paths in the scripts if necessary.
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Contributing
 
-3. Download and place the Chrome WebDriver executable in the project directory or specify the path to it in the `airbnb_scraper.py` script.
+Interested in making this tool even better? We welcome contributions! 
+1. Fork the repository.
+2. Make your changes or enhancements.
+3. Create a pull request for review.
 
-### Usage
+### License
 
-1. Open the `main.py` script and customize the `city`, `state`, and `country` variables to specify the location you want to scrape.
+(You can specify the license details here.)
 
-2. Run the script:
+---
 
-   ```bash
-   python main.py
-   ```
+This README offers a more detailed breakdown of each component and its usage. Adjustments can be made as needed, especially if you have specific paths or additional steps to mention.
 
-   This will start the scraping process, and the scraped data will be printed to the console. You can modify the `scrape_listing_details` method in `airbnb_scraper.py` to process or store the data as needed.
-
-3. The script will automatically scroll through multiple pages of Airbnb listings and scrape the details of each listing.
-
-### Closing the Scraper
-
-When you are done, the script will automatically close the Chrome WebDriver. You can also manually terminate the script by pressing `Ctrl+C` in the terminal.
 
 ## License
 
